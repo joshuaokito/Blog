@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLORYHAVENSARL AIDÉ MOI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #6a0dad;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        main {
+            padding: 20px;
+        }
+        section {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        #home {
+            background-color: #e6e6fa;
+        }
+        #services {
+            background-color: #d8bfd8;
+        }
+        #tex {
+            background-color: #dda0dd;
+        }
+        #photos {
+            background-color: #ee82ee;
+        }
+        #comments {
+            background-color: #da70d6;
+        }
+        #contact {
+            background-color: #ba55d3;
+        }
+        #publication {
+            background-color: #9932cc;
+        }
+        #products {
+            background-color: #9400d3;
+        }
+        #creer-boutique {
+            background-color: #8a2be2;
+        }
+        #creer-produit {
+            background-color: #7b68ee;
+        }
+        footer {
+            background-color: #6a0dad;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        form input[type="submit"] {
+            background-color: #6a0dad;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        form input[type="submit"]:hover {
+            background-color: #5a0ca1;
+        }
+        .product {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .product button {
+            background-color: #6a0dad;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+        .product button:hover {
+            background-color: #5a0ca1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>GLORYHAVENSARL AIDÉ MOI</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#services">Postes de Service</a></li>
+                <li><a href="#tex">Tex</a></li>
+                <li><a href="#photos">Photos</a></li>
+                <li><a href="#comments">Commentaires</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#publication">Publication</a></li>
+                <li><a href="#products">Produits</a></li>
+                <li><a href="#creer-boutique">Créer sa Boutique</a></li>
+                <li><a href="#creer-produit">Créer un Produit</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <h2>Bienvenue sur GLORYHAVENSARL AIDÉ MOI</h2>
+            <p>Votre plateforme de demande d'emploi et de conseils de carrière.</p>
+        </section>
+        <section id="services">
+            <h2>Postes de Service</h2>
+            <div id="job-listings">
+                <?php echo do_shortcode('[jobs]'); ?>
+            </div>
+            <ul>
+                <li><a href="https://www.emploi.cd/" target="_blank">Emploi.cd</a></li>
+                <li><a href="https://www.mediacongo.net/" target="_blank">MediaCongo.net</a></li>
+                <li><a href="https://wagepoint.com/people/" target="_blank">Wagepoint</a></li>
+                <li><a href="https://job.drc.ngo/jobs/" target="_blank">DRC NGO Jobs</a></li>
+                <li><a href="https://gorh.co/" target="_blank">Go RH</a></li>
+                <li><a href="https://untalent.org/jobs/in-anything/contract-all/congo-kinshasa" target="_blank">UN Talent</a></li>
+            </ul>
+        </section>
+        <section id="tex">
+            <h2>Tex</h2>
+        </section>
+        <section id="photos">
+            <h2>Photos</h2>
+            <?php echo do_shortcode('[ngg src="galleries" ids="1" display="basic_thumbnail"]'); ?>
+        </section>
+        <section id="comments">
+            <h2>Commentaires</h2>
+            <div id="disqus_thread"></div>
+            <script>
+                var disqus_config = function () {
+                this.page.url = PAGE_URL;  
+                this.page.identifier = PAGE_IDENTIFIER; 
+                };
+                (function() { 
+                var d = document, s = d.createElement('script');
+                s.src = 'https://EXAMPLE.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+                })();
+            </script>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <?php echo do_shortcode('[contact-form-7 id="1234" title="Formulaire de contact 1"]'); ?>
+        </section>
+        <section id="publication">
+            <h2>Publication</h2>
+            <form action="submit_post.php" method="post" enctype="multipart/form-data">
+                <label for="title">Titre:</label>
+                <input type="text" id="title" name="title" required>
+                <label for="content">Contenu:</label>
+                <textarea id="content" name="content" required></textarea>
+                <label for="image">Image:</label>
+                <input type="file" id="image" name="image" accept="image/*">
+                <input type="submit" value="Publier">
+            </form>
+        </section>
+        <section id="products">
+            <h2>Liste des Produits</h2>
+            <div class="product">
+                <h2>Produit 1</h2>
+                <p>Description du produit 1.</p>
+                <p>Prix : 100 $</p>
+                <p><a href="lien-affiliation-produit-1">Lien d'affiliation</a></p>
+                <button>Ajouter au panier</button>
+                <p><a href="https://wa.me/243970004404" target="_blank">Contact WhatsApp</a></p>
+                <button>Acheter avec M-Pesa</button>
+            </div>
+            <div class="product">
+                <h2>Produit 2</h2>
+                <p>Description du produit 2.</p>
+                <p>Prix : 120 $</p>
+                <p><a href="lien-affiliation-produit-2">Lien d'affiliation</a></p>
+                <button>Ajouter au panier</button>
+                <p><a href="https://wa.me/243970004404" target="_blank">Contact WhatsApp</a></p>
+                <button>Acheter avec M-Pesa</button>
+            </div>
+            <h2>15 Idées de Produits Numériques</h2>
+            <ol>
+                <li>Ebooks</li>
+                <li>Cours en ligne et formations en virtuel</li>
+                <li>Art numérique/graphique</li>
+                <li>Logiciels</li>
+                <li>Applications mobiles</li>
+                <li>Photographie</li>
+                <li>Vidéo</li>
+                <li>Podcasts</li>
+                <li>Un catalogue de modèles de textes à télécharger</li>
+                <li>Musiques et effets sonores</li>
+                <li>Agendas pour aider vos clients à être plus productifs par exemple !</li>
+                <li>Polices de caractères</li>
+                <li>Services professionnels</li>
+                <li>Abonnements</li>
+                <li>Recettes de chef et patrons créatifs</li>
+            </ol>
+        </section>
+        <section id="creer-boutique">
+            <h2>Créer sa Boutique</h2>
+            <form action="create_store.php" method="post">
+                <label for="store-name">Nom de la Boutique:</label>
+                <input type="text" id="store-name" name="store_name" required>
+                <label for="store-description">Description de la Boutique:</label>
+                <textarea id="store-description" name="store_description" required></textarea>
+                <input type="submit" value="Créer la Boutique">
+            </form>
+        </section>
+        <section id="creer-produit">
+            <h2>Créer un Produit</h2>
+            <form action="create_product.php" method="post" enctype="multipart/form-data">
+                <label for="product-name">Nom du Produit:</label>
+                <input type="text" id="product-name" name="product_name" required>
+                <label for="product-description">Description du Produit:</label>
+                <textarea id="product-description" name="product_description" required></textarea>
+                <label for="product-price">Prix du Produit:</label>
+                <input type="number" id="product-price" name="product_price" required>
+                <label for="product-image">Image du Produit:</label>
+                <input type="file" id="product-image" name="product_image" accept="image/*">
+                <input type="submit" value="Créer le Produit">
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 GLORYHAVENSARL AIDÉ MOI. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
